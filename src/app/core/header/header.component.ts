@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  @Input() openDrawer?: boolean;
+
+  @Output() toggle = new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  toggleDrawer(): void {
+    this.toggle.emit();
   }
 
 }

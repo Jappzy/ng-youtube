@@ -1,10 +1,10 @@
 <mat-toolbar>
 
-    <button mat-icon-button aria-label="Toggle SideNav">
+    <button *ngIf="!openDrawer" mat-icon-button aria-label="Menu" (click)="toggleDrawer()">
         <mat-icon>menu</mat-icon>
     </button>
 
-    <svg viewBox="0 0 98 24" preserveAspectRatio="xMidYMid meet" focusable="false" class="style-scope ytd-topbar-logo-renderer" style="pointer-events: none; display: block; width: 128px; height: 24px;">
+    <svg *ngIf="!openDrawer" viewBox="0 0 98 24" preserveAspectRatio="xMidYMid meet" focusable="false" class="style-scope ytd-topbar-logo-renderer" style="pointer-events: none; display: block; width: 128px; height: 24px;">
         <g viewBox="0 0 98 24" preserveAspectRatio="xMidYMid meet" class="style-scope ytd-topbar-logo-renderer">
             <g class="style-scope ytd-topbar-logo-renderer">
                 <path fill="#FF0000" d="M28.4,5.12c-0.34-1.24-1.31-2.2-2.55-2.52C23.62,2,14.68,2,14.68,2S5.75,2,3.52,2.6
@@ -38,20 +38,20 @@
 
     <div style="flex: 1 1 auto; height: 100%; display: flex; justify-content: center; align-items: center;">
         <input type="text" placeholder="Search" style="height: 56%; width: 54%; box-sizing: border-box; margin: 0; padding-left: 1rem;">
-        <button mat-raised-button>
+        <button mat-raised-button matTooltip="Search" matTooltipClass="yt-tooltip" aria-label="Search">
             <mat-icon style="opacity: 0.5;">search</mat-icon>
         </button>
     </div>
 
-    <button mat-icon-button [matMenuTriggerFor]="createMenu" aria-label="Create">
+    <button mat-icon-button [matMenuTriggerFor]="createMenu" matTooltip="Create" matTooltipClass="yt-tooltip" aria-label="Create">
         <mat-icon>video_call</mat-icon>
     </button>
 
-    <button mat-icon-button [matMenuTriggerFor]="appsMenu" aria-label="YouTube Apps">
+    <button mat-icon-button [matMenuTriggerFor]="appsMenu" matTooltip="YouTube Apps" matTooltipClass="yt-tooltip" aria-label="YouTube Apps">
         <mat-icon>apps</mat-icon>
     </button>
 
-    <button mat-icon-button aria-label="Notifications">
+    <button mat-icon-button matTooltip="Notifications" matTooltipClass="yt-tooltip" aria-label="Notifications">
         <mat-icon>notifications</mat-icon>
     </button>
 
